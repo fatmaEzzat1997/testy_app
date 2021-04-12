@@ -41,10 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           SizedBox(height: MediaQuery.of(context).size.height*0.06),
           DefaultButton(textButton: 'LOGIN'),
-
           SizedBox(height: MediaQuery.of(context).size.height*0.01),
           DefaultButton(textButton: 'SING UP'),
-
           SizedBox(height: MediaQuery.of(context).size.height*0.03),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -52,13 +50,8 @@ class _LoginScreenState extends State<LoginScreen> {
               Text('Forgot Your Password ?'),
             ],
           )
-
         ],
-
-
-
       ),
-
     );
   }
 }
