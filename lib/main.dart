@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testy_app/cart/your_cart.dart';
+import 'package:testy_app/screens/cart/your_cart.dart';
 import 'package:testy_app/screens/checkOut/checkout.dart';
 import 'package:testy_app/screens/login/login.dart';
 import 'package:testy_app/screens/orders/your_orders.dart';
@@ -13,8 +13,8 @@ class TastyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.grey[200]),
-      home:CheckOut(),
-      //YourOrders()
+      home://CheckOut(),
+      YourOrders()
      //YourCart()
 
 
