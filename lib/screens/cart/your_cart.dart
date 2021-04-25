@@ -70,7 +70,9 @@ class _YourCartState extends State<YourCart> {
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.40,
         ),
-        TextS(),
+        TextS(
+          price: ('50 L.E'),
+        ),
         Button(
           text: ('PROCESS TO CHECKOUT'),
         ),

@@ -5,9 +5,11 @@ import '../colors.dart';
 class CustomTextField extends StatelessWidget {
   final String text;
   final String hint;
+  final String title;
+  TextEditingController controller;
 
 
-  CustomTextField({@required this.text,@required this.hint});
+  CustomTextField({@required this.text,@required this.hint,@required controller,@required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,8 @@ class CustomTextField extends StatelessWidget {
                 decoration: InputDecoration(
                   labelText: text,
                   hintText:hint,
+
+
                   filled: true,
                   fillColor: Colors.white,
                   enabledBorder: OutlineInputBorder(
@@ -38,8 +42,18 @@ class CustomTextField extends StatelessWidget {
                       )
 
                   ),
+
                 ),
+                controller: controller,
+                validator: (value){
+                  if (value.isEmpty){
+                    return title;
+                  }
+                  return null ;
+                },
+
               ),
+
             ),
         ],
       ),
@@ -69,13 +83,17 @@ class DefaultButton extends StatelessWidget {
   }
 }
 class TextS extends StatelessWidget {
+  final String price;
+
+  const TextS({Key key, this.price}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Total Price:',),
-        Text('50 L.E',style: TextStyle(fontWeight:FontWeight.bold,fontSize: 20),)
+        Text('Total Price:$price',style: TextStyle(fontWeight:FontWeight.bold,fontSize: 20)),
+
 
       ],
     );
@@ -83,7 +101,8 @@ class TextS extends StatelessWidget {
 }
 class Button extends StatelessWidget {
   final String text;
-      Button({@required this.text});
+  Function function;
+      Button({@required this.text,@required this.function});
   @override
   Widget build(BuildContext context) {
     return  Padding(
@@ -95,7 +114,8 @@ class Button extends StatelessWidget {
             borderRadius: BorderRadius.circular(20)
         ),
         color:  Colors.green,
-        onPressed: (){},
+        onPressed: function,
+
         child: Text(text,
           style: TextStyle(color: Colors.white),
         ),
