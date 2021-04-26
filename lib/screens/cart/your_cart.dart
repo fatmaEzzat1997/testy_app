@@ -10,74 +10,76 @@ class _YourCartState extends State<YourCart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Your Cart'),
-      ),
-      body: ListView(children: [
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(color: Colors.white),
-            borderRadius: BorderRadius.circular(23),
-          ),
-          margin: EdgeInsets.all(15),
-          padding: EdgeInsets.all(15),
-          height: 150,
-          width: 300,
-          child: Row(
-            children: [
-              SizedBox(
-                  child: Image(
-                    image: (ExactAssetImage('images/assets/icon.png')),
-                  )),
-              Expanded(
-                child: Column(children: <Widget>[
-                  Text(
-                    'CHICKEN FINGERS KIDS MEAL',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                    ),
+        appBar: AppBar(
+          title: Text('Your Cart'),
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                  itemBuilder: (context, i) {return Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(23),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
-                  ),
-                  Text(
-                    '50LE',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Icon(
-                        Icons.delete,
-                        color: Colors.red,
-                      ),
+                  margin: EdgeInsets.all(15),
+                  padding: EdgeInsets.all(15),
+                  height: 150,
+                  width: 300,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                          child: Image(
+                        image: (ExactAssetImage('images/assets/icon.png')),
+                      )),
+                      Expanded(
+                        child: Column(children: <Widget>[
+                          Text(
+                            'CHICKEN FINGERS KIDS MEAL',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02,
+                          ),
+                          Text(
+                            '50LE',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: <Widget>[
+                              Icon(
+                                Icons.delete,
+                                color: Colors.red,
+                              ),
+                            ],
+                          ),
+                          Text(
+                            'category:kidsMeals',
+                            style: TextStyle(color: Colors.grey),
+                          )
+                        ]),
+                      )
                     ],
                   ),
-                  Text(
-                    'category:kidsMeals',
-                    style: TextStyle(color: Colors.grey),
-                  )
-                ]),
-              )
-            ],
-          ),
-        ),
+                );},
+                itemCount: 5,
 
-
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.40,
-        ),
-        TextS(
-          price: ('50 L.E'),
-        ),
-        Button(
-          text: ('PROCESS TO CHECKOUT'),
-        ),
-
-      ]),
-    );
+              ),
+            ),
+            SizedBox(height: 20,),
+            Button(
+              text: ('PROCESS TO CHECKOUT'),
+              function: () {},
+              color: Colors.green,
+            ),
+            SizedBox(height: 20,)
+          ],
+        ));
   }
 }

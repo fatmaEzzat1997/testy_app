@@ -102,20 +102,18 @@ class TextS extends StatelessWidget {
 class Button extends StatelessWidget {
   final String text;
   Function function;
-      Button({@required this.text,@required this.function});
+  Color color ;
+      Button({@required this.text,@required this.function,this.color});
   @override
   Widget build(BuildContext context) {
     return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: FlatButton(
-
         shape: RoundedRectangleBorder(
-
             borderRadius: BorderRadius.circular(20)
         ),
-        color:  Colors.green,
+        color: color,
         onPressed: function,
-
         child: Text(text,
           style: TextStyle(color: Colors.white),
         ),

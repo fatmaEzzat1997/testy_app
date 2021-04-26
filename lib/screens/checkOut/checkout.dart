@@ -16,9 +16,6 @@ class _CheckOutState extends State<CheckOut> {
   var streetNameController=TextEditingController();
   var buildingNumberController=TextEditingController();
   var floorNumberController=TextEditingController();
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +25,6 @@ class _CheckOutState extends State<CheckOut> {
         ),
         body: Form(
           key: _formKey,
-
           child: ListView(
             children: [
               Container(
@@ -121,9 +117,6 @@ class _CheckOutState extends State<CheckOut> {
             ],
           ),
         ),
-
-
-
     );
   }
 }

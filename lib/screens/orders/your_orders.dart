@@ -34,6 +34,7 @@ class _YourOrdersState extends State<YourOrders> {
             width: 400,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Order Name: CHOCOLATE MINI CAKE'),
                 SizedBox(
@@ -48,7 +49,6 @@ class _YourOrdersState extends State<YourOrders> {
                   height:MediaQuery.of(context).size.height*0.03 ,
                 ),
                 Text('Total Price:35')
-
               ],
             ),
 
@@ -56,11 +56,7 @@ class _YourOrdersState extends State<YourOrders> {
 
           ),
         ],
-
       )
-
-
-
     );
   }
 }

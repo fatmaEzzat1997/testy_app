@@ -13,7 +13,7 @@ class TastyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.grey[200]),
-      home:CheckOut(),
+      home:YourOrders(),
       //YourOrders()
      //YourCart()
 
